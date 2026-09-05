@@ -172,7 +172,7 @@ df_chart = pd.DataFrame(chart_data)
 st.bar_chart(
     df_chart.set_index("Language")[["Accuracy (%)", "Missed (%)", "Spurious (%)"]], 
     height=400,
-    color=["#ffffff", "#a1a1aa", "#3f3f46"]
+    color=["#3b82f6", "#ef4444", "#f59e0b"]
 )
 
 st.markdown("---")
