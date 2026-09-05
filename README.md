@@ -3,6 +3,10 @@
 ## Problem
 A collections voice agent needs to perform precise structured tool calls (e.g., `capture_ptp`, `escalate_human`) to be functional in a real-world scenario. However, in India, borrowers often speak in code-mixed languages like Hinglish and Marathi. The problem is that open-weight models suffer from degraded function-calling reliability when prompted in non-English languages. A missed `capture_ptp` is lost revenue. 
 
+## Live Dashboard
+The evaluation results have been visualized in an interactive, production-grade Streamlit dashboard. 
+**Access the live demo here:** [https://c35wdubkb9a6vazfqtpvyc.streamlit.app/](https://c35wdubkb9a6vazfqtpvyc.streamlit.app/)
+
 ## Approach
 We built a robust, automated evaluation harness in Python to measure the delta in tool-calling accuracy between English, Hinglish, and Marathi under local, open-weight conditions.
 1. **Adversarial Dataset Synthesis**: We synthesized a 210-case JSONL dataset containing realistic borrower utterances (sustained abuse, ambiguous statements, threats, requests to contact family) mapped to the 5 official Section 6.3 tools.
