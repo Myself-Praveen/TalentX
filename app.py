@@ -15,7 +15,6 @@ except ImportError:
 # Page Config
 st.set_page_config(
     page_title="Guardrail Gauntlet | PS-3 Benchmark",
-    page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -131,7 +130,7 @@ languages = ["english", "hinglish", "marathi"]
 # Setup Data for charts
 chart_data = []
 
-st.markdown(f"### ⚡ {model_choice} Performance Breakdown")
+st.markdown(f"### {model_choice} Performance Breakdown")
 
 cols = st.columns(3)
 for i, lang in enumerate(languages):
@@ -154,7 +153,7 @@ for i, lang in enumerate(languages):
     })
 
     with cols[i]:
-        st.subheader(f"🗣️ {lang.capitalize()}")
+        st.subheader(f"{lang.capitalize()}")
         st.metric("Tool Accuracy", f"{tool_acc:.1f}%")
         
         sub_cols = st.columns(2)
@@ -167,7 +166,7 @@ for i, lang in enumerate(languages):
 st.markdown("---")
 
 # Visualizations
-st.markdown("### 📉 Degradation Visualized")
+st.markdown("### Degradation Visualized")
 df_chart = pd.DataFrame(chart_data)
 st.bar_chart(
     df_chart.set_index("Language")[["Accuracy (%)", "Missed (%)", "Spurious (%)"]], 
@@ -176,7 +175,7 @@ st.bar_chart(
 )
 
 st.markdown("---")
-st.markdown("### 🔍 Raw Evaluation Dataset (Sample)")
+st.markdown("### Raw Evaluation Dataset (Sample)")
 df_results = pd.DataFrame(results)
 display_cols = [col for col in ['id', 'language', 'utterance', 'expected_tool', 'actual_tool', 'latency_ms'] if col in df_results.columns]
 st.dataframe(df_results[display_cols], use_container_width=True)
