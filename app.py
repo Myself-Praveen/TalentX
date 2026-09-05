@@ -23,74 +23,73 @@ st.set_page_config(
 # Custom CSS for beauty
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap');
     
     html, body, [class*="css"]  {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Geist', -apple-system, sans-serif;
     }
     
     .main-header {
-        font-size: 3rem;
-        font-weight: 800;
-        background: -webkit-linear-gradient(45deg, #FF6B6B, #4ECDC4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 0rem;
-        letter-spacing: -1px;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.03em;
     }
     .sub-header {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: #8892B0;
-        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #a1a1aa;
+        margin-bottom: 2.5rem;
+        letter-spacing: -0.01em;
     }
     .highlight-box {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        border-radius: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-left: 6px solid #4ECDC4;
+        background: #09090b;
+        padding: 1.5rem;
+        border-radius: 6px;
+        border: 1px solid #27272a;
+        border-left: 4px solid #ffffff;
         margin-bottom: 2.5rem;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-        color: #CCD6F6;
-        font-size: 1.1rem;
+        color: #e4e4e7;
+        font-size: 0.95rem;
         line-height: 1.6;
     }
     [data-testid="stMetricValue"] {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: #E6F1FF;
+        font-family: 'Geist Mono', monospace;
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: #ffffff;
+        letter-spacing: -0.04em;
     }
     [data-testid="stMetricLabel"] {
-        font-size: 1.1rem;
-        color: #8892B0;
-        font-weight: 600;
+        font-size: 0.85rem;
+        color: #a1a1aa;
+        font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.05em;
     }
     
-    /* Style the metric containers as cards */
+    /* Minimal card style */
     div[data-testid="metric-container"] {
-        background: rgba(17, 34, 64, 0.4);
-        border: 1px solid rgba(255,255,255,0.05);
-        padding: 1.5rem;
-        border-radius: 0.8rem;
-        transition: transform 0.2s ease, border-color 0.2s ease;
+        background: #09090b;
+        border: 1px solid #27272a;
+        padding: 1.2rem;
+        border-radius: 6px;
     }
-    div[data-testid="metric-container"]:hover {
-        transform: translateY(-5px);
-        border-color: #4ECDC4;
+    
+    /* Remove default Streamlit top padding */
+    .block-container {
+        padding-top: 2rem !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="main-header">🛡️ The Guardrail Gauntlet (PS-3)</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-header">Evaluating Open-Weight Tool Calls Under Code-Mixing (Hinglish/Marathi)</p>', unsafe_allow_html=True)
+st.markdown('<p class="main-header">TalentX PS-3 Benchmark</p>', unsafe_allow_html=True)
+st.markdown('<p class="sub-header">Evaluating Tool Call Reliability Under Indian Code-Mixing</p>', unsafe_allow_html=True)
 
 st.markdown("""
 <div class="highlight-box">
-    <b>Problem Statement:</b> Open-weight models (Qwen, Llama) suffer function-calling degradation when borrowers switch from English to Hindi/Marathi. This dashboard quantifies the exact tool-accuracy drop and latency spikes under a 210-case adversarial collections simulation.
+    <b>Problem Statement:</b> Open-weight models suffer function-calling degradation when inputs switch from English to Hindi or Marathi. This harness quantifies exactly how tool-accuracy drops and latency spikes during a 210-case adversarial collections simulation.
 </div>
 """, unsafe_allow_html=True)
 
