@@ -77,9 +77,9 @@ st.markdown("""
         border-radius: 6px;
     }
     
-    /* Remove default Streamlit top padding */
+    /* Remove default Streamlit top padding but leave enough room for header */
     .block-container {
-        padding-top: 2rem !important;
+        padding-top: 4rem !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -169,7 +169,11 @@ st.markdown("---")
 # Visualizations
 st.markdown("### 📉 Degradation Visualized")
 df_chart = pd.DataFrame(chart_data)
-st.bar_chart(df_chart.set_index("Language")[["Accuracy (%)", "Missed (%)", "Spurious (%)"]], height=400)
+st.bar_chart(
+    df_chart.set_index("Language")[["Accuracy (%)", "Missed (%)", "Spurious (%)"]], 
+    height=400,
+    color=["#ffffff", "#a1a1aa", "#3f3f46"]
+)
 
 st.markdown("---")
 st.markdown("### 🔍 Raw Evaluation Dataset (Sample)")
