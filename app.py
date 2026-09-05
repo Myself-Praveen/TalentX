@@ -23,26 +23,64 @@ st.set_page_config(
 # Custom CSS for beauty
 st.markdown("""
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    
+    html, body, [class*="css"]  {
+        font-family: 'Inter', sans-serif;
+    }
+    
     .main-header {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #1E88E5;
+        font-size: 3rem;
+        font-weight: 800;
+        background: -webkit-linear-gradient(45deg, #FF6B6B, #4ECDC4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         margin-bottom: 0rem;
+        letter-spacing: -1px;
     }
     .sub-header {
-        font-size: 1.2rem;
-        color: #616161;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #8892B0;
         margin-bottom: 2rem;
     }
     .highlight-box {
-        background-color: #f0f2f6;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        border-left: 5px solid #1E88E5;
-        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 6px solid #4ECDC4;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        color: #CCD6F6;
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
     [data-testid="stMetricValue"] {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #E6F1FF;
+    }
+    [data-testid="stMetricLabel"] {
+        font-size: 1.1rem;
+        color: #8892B0;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    /* Style the metric containers as cards */
+    div[data-testid="metric-container"] {
+        background: rgba(17, 34, 64, 0.4);
+        border: 1px solid rgba(255,255,255,0.05);
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    div[data-testid="metric-container"]:hover {
+        transform: translateY(-5px);
+        border-color: #4ECDC4;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -94,7 +132,7 @@ languages = ["english", "hinglish", "marathi"]
 # Setup Data for charts
 chart_data = []
 
-st.markdown(f"### {model_choice} Performance Breakdown")
+st.markdown(f"### ⚡ {model_choice} Performance Breakdown")
 
 cols = st.columns(3)
 for i, lang in enumerate(languages):
@@ -137,4 +175,7 @@ st.bar_chart(df_chart.set_index("Language")[["Accuracy (%)", "Missed (%)", "Spur
 st.markdown("---")
 st.markdown("### 🔍 Raw Evaluation Dataset (Sample)")
 df_results = pd.DataFrame(results)
-st.dataframe(df_results[['id', 'language', 'utterance', 'expected_tool', 'actual_tool', 'latency_ms']], use_container_width=True)
+display_cols = ['id', 'language', 'utterance', 'expected_tool', 'actual_tool']
+if 'latency_ms' in df_results.columns:
+    display_cols.append('latency_ms')
+st.dataframe(df_results[display_cols], use_container_width=True)
