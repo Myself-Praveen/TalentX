@@ -128,7 +128,7 @@ async def evaluate_case_gemini(client, model_name: str, case: dict, gemini_tools
 
 async def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, default="qwen3.5:4b", help="Model to evaluate (e.g., qwen3.5:4b, llama3.2:3b, gemini-3.7-flash)")
+    parser.add_argument("--model", type=str, default="qwen3.5:4b", help="Model to evaluate (e.g., qwen3.5:4b, llama3.2:3b, gemini-2.5-flash)")
     args = parser.parse_args()
     
     model_name = args.model
