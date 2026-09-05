@@ -1,0 +1,3007 @@
+[
+  {
+    "id": "eng_0",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 500,
+      "promised_date": "2024-07-15",
+      "confidence": "firm"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I will pay 500 dollars on the 15th of next month, definitely.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_1",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 50000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_2",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "This isn't my debt! I never took this loan."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "This is not my debt! I never took this loan.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_3",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "abuse"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_4",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower explicitly refused to pay."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I am not paying a single penny. You can try whatever you want.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_5",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower not responding to call"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_6",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 1000,
+      "promised_date": "2024-07-05",
+      "confidence": "tentative"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I can probably pay you 1000 rupees by the end of next week.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_7",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": null,
+      "amount": 2000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_8",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "The amount you're asking for is totally wrong, I only owe half of that!"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "You are disputing the debt amount.",
+      "dispute_type": "amount_wrong"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_9",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_10",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Borrower states it's a wrong number."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Caller claimed to be from Apex Bank, but was not the intended borrower"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_11",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower requested information about account status"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_12",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 2500,
+      "promised_date": "2024-07-10",
+      "confidence": "firm"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_date": "2023-07-10",
+      "confidence": "firm",
+      "promised_amount": 2500
+    },
+    "error": null
+  },
+  {
+    "id": "eng_13",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_14",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "I already made this payment last Tuesday, check your system."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower disputes the debt, claiming payment was made last Tuesday."
+    },
+    "error": null
+  },
+  {
+    "id": "eng_15",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "abuse"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_16",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower requested a callback tomorrow around noon."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLBACK",
+      "notes": "Request to call back tomorrow around noon"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_17",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLBACK",
+      "notes": "Operating hours: 08:00-19:00"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_18",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 750,
+      "promised_date": "2024-06-25",
+      "confidence": "tentative"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I will try to get you 750 by the 25th of this month.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_19",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 1500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 1500,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_20",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "other",
+      "borrower_statement": "There's some other issue with this loan, it's not what I agreed to at all."
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_21",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "out_of_scope"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_22",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower explicitly refused to pay."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I absolutely refuse to make any payment.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_23",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Calling Rahul regarding 30 days past due Personal Loan of 50000"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_24",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 300,
+      "promised_date": "2024-10-01",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 300,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_25",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 500,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_26",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "I paid this bill last week, you must have it recorded."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I paid this bill last week, you must have it recorded.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_27",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "distress"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_28",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower requested a callback next Tuesday."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower requested to be contacted again"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_29",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower requested address confirmation"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_30",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 800,
+      "promised_date": "2024-07-03",
+      "confidence": "firm"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_amount": 800,
+      "promised_date": "2023-07-03"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_31",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_32",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "This loan isn't mine, I'm just getting calls because my name is similar to someone else's."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I am not the borrower who took the loan.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_33",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_34",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower explicitly refused to pay."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I cannot and will not pay this amount.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_35",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Company name not discussed"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_36",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": null,
+      "promised_date": "2024-07-20",
+      "confidence": "firm"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_amount": 50000,
+      "promised_date": "2023-07-20",
+      "confidence": "firm"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_37",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": null,
+      "amount": 1000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "sms",
+      "amount": 1000
+    },
+    "error": null
+  },
+  {
+    "id": "eng_38",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "The interest calculation here seems way off. This isn't correct."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Interest calculation issue during call"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_39",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "abuse"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "abuse"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_40",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Borrower states it's the wrong person."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Incorrect borrower name provided"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_41",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower not available for call"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_42",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 500,
+      "promised_date": "2024-06-28",
+      "confidence": "firm"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_amount": 500,
+      "promised_date": "2024-06-28"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_43",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 2500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2500,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_44",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "My payment shows as successful on my bank statement, but you're saying it's due. This is a dispute."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "My payment shows as successful on my bank statement, but you"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_45",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "distress"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_46",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower requested a callback later."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower requested to be called back later"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_47",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower requested information about branch location"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_48",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 1200,
+      "promised_date": "2024-06-30",
+      "confidence": "firm"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_amount": 1200,
+      "promised_date": "last day of this month",
+      "confidence": "firm"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_49",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 700
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 700,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_50",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "I dispute this. I received a different amount in the loan than what you are claiming."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I received a different amount in the loan than what you are claiming.",
+      "dispute_type": "amount_wrong"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_51",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_52",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower explicitly refused to pay and requested no further calls."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "I am not going to pay, end of story. Don",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_53",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_54",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 400,
+      "promised_date": "2024-07-05",
+      "confidence": "tentative"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "confidence": "tentative",
+      "promised_amount": 400,
+      "promised_date": "2023-07-05"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_55",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 3000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 3000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_56",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "I dispute this loan entirely, it's not even registered under my name."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "This loan is not registered under my name.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_57",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_58",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "dispute"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "dispute"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_59",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Calling Rahul regarding 30 days past due Personal Loan of 50000"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_60",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 600,
+      "promised_date": "2024-07-05",
+      "confidence": "firm"
+    },
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_amount": 600,
+      "promised_date": "2023-03-10"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_61",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 800
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "800",
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_62",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "other",
+      "borrower_statement": "I dispute the entire premise of this loan. There's some fraud involved."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "There is fraud involved in the loan.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_63",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "out_of_scope"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_64",
+    "language": "english",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower thinks it's a scam and refused payment."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower refused to discuss debt"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_65",
+    "language": "english",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower did not acknowledge or respond to the call"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_66",
+    "language": "english",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 1500,
+      "promised_date": "2024-07-10",
+      "confidence": "tentative"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "I might be able to pay 1500 around the 10th of next month, but it\\u2019s not a guarantee."
+    },
+    "error": null
+  },
+  {
+    "id": "eng_67",
+    "language": "english",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_68",
+    "language": "english",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "The amount you're quoting for my loan repayment is significantly higher than what I signed up for."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "The amount you are quoting is significantly higher than what I signed up for.",
+      "dispute_type": "amount_wrong"
+    },
+    "error": null
+  },
+  {
+    "id": "eng_69",
+    "language": "english",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_0",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 5000,
+      "promised_date": "2024-06-20",
+      "confidence": "firm"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower confirmed \u20b950000 payment for 30 days past due personal loan."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_1",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 10000,
+      "promised_date": "2024-06-25",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 10000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_2",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 20000,
+      "promised_date": "2024-07-05",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 20000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_3",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 7000,
+      "promised_date": "2024-06-19",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 7000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_4",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 2500,
+      "promised_date": "2024-06-22",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2500,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_5",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 3000,
+      "promised_date": "2024-06-21",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 3000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_6",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 10000,
+      "promised_date": "2024-07-01",
+      "confidence": "firm"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower agreed to pay by 1st July, remaining amount to be cleared"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_7",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 1000,
+      "promised_date": "2024-06-22",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_8",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 8000,
+      "promised_date": "2024-06-30",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 8000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_9",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 2000,
+      "promised_date": "2024-06-24",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_10",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 3000,
+      "promised_date": "2024-10-31",
+      "confidence": "tentative"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Diwali se pehle main kuch amount pay kar paunga, par pakka nahi.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_11",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 15000,
+      "promised_date": "2024-11-10",
+      "confidence": "firm"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Bas mera bonus aane do, November 10th tak, main 15000 de dunga."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_12",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 5000,
+      "promised_date": "2024-06-26",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_13",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 6000,
+      "promised_date": "2024-07-20",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_14",
+    "language": "hinglish",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 1000,
+      "promised_date": "2024-06-28",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_15",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 10000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "whatsapp",
+      "amount": 50000
+    },
+    "error": null
+  },
+  {
+    "id": "hin_16",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 5000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "50000",
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_17",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 10000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_18",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 2500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2500,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_19",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 10000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_20",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "out_of_scope"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2000,
+      "channel": "email"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_21",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 10000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_22",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 10000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_23",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 3000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 3000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_24",
+    "language": "hinglish",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 1000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "whatsapp",
+      "amount": 1000
+    },
+    "error": null
+  },
+  {
+    "id": "hin_25",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "Yeh loan mera nahi hai, aap galat number par call kar rahe ho."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Borrower disputed the debt, claiming the number was incorrect"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_26",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "Maine toh already pay kar diya hai, meri bank statement check karo."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Maine toh already pay kar diya hai, meri bank statement check karo."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_27",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "Amount galat dikha raha hai, itna loan toh liya hi nahi tha maine."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Amount galat dikha raha hai, itna loan toh liya hi nahi tha maine.",
+      "dispute_type": "amount_wrong"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_28",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "Mera iss company se koi lena dena nahi hai, main dispute karta hoon."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Mera iss company se koi lena dena nahi hai, main dispute karta hoon."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_29",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "other",
+      "borrower_statement": "Iss payment ka issue hai, maine abhi tak service receive nahi ki."
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_30",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "Mujhe fraud lag raha hai, yeh loan mere naam par kaise hai?"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_31",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "Pehle pata karo yeh kya maamla hai, main nahi manta yeh loan hai."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Main yeh loan nahi maanta hoon, iska pata karo kya hai.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_32",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "Aap baar baar kyu call kar rahe ho jab maine pay kar diya hai?"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "notes": "Borrower disputed the debt",
+      "code": "REFUSED"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_33",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "Ye interest bahut zyada hai, itna nahi hona chahiye tha."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "other",
+      "borrower_statement": "Ye interest bahut zyada hai, itna nahi hona chahiye tha."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_34",
+    "language": "hinglish",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "other",
+      "borrower_statement": "Maine toh cancel kar diya tha, payment kaise pending hai?"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "other",
+      "borrower_statement": "Payment cancel karne ke baad payment pending hai"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_35",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Agent se baat karni hai, abhi ke abhi",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_36",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_37",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_38",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "abuse"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower is refusing to acknowledge debt"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_39",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "out_of_scope"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower requested information in Hindi"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_40",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Apex Bank collections call"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_41",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "out_of_scope"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_42",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "other",
+      "borrower_statement": "Agar aise hi baat karni hai toh mat karo call, kisi aur ko transfer karo."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_43",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "abuse"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower refused to discuss debt"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_44",
+    "language": "hinglish",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "dispute"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "dispute"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_45",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower requested callback after 6 PM."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower is unavailable, scheduled call for 6 pm tomorrow"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_46",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Wrong number, user is not Rahul."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Borrower denied identity"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_47",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower refused to talk and asked to cut the call."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower declined to discuss debt"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_48",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "PAID",
+      "notes": "Borrower claims payment already made, questioning repeated calls."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Maine toh pay kar diya, ab dobara kyu call kar rahe ho?"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_49",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "NO_CONTACT",
+      "notes": "Call ended by borrower after acknowledging."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower acknowledged the call"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_50",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower busy driving, requested callback later."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower not available"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_51",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Borrower explicitly stated inability to pay."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Main payment nahi kar paunga, abhi koi chance nahi hai.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_52",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "Call dropped previously, borrower refused further conversation."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLDROPPED",
+      "notes": "Baat nahi karni"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_53",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "ESCALATED",
+      "notes": "Borrower demanded escalation or call end."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Rahul ko personal loan ke baare mein bataya, 50000 rupaye ki kisam ki hai."
+    },
+    "error": null
+  },
+  {
+    "id": "hin_54",
+    "language": "hinglish",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "NO_CONTACT",
+      "notes": "General acknowledgement, ending call."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower confirmed"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_55",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "CALLBACK",
+      "notes": "Borrower contacted"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_56",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower Rahul 30 days past due on Personal Loan, outstanding 50000"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_57",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "distress"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_58",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_59",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_60",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "Aapko aur samay chahiye, abhi nahi ho payega.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_61",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "NONE",
+    "actual_args": {},
+    "error": null
+  },
+  {
+    "id": "hin_62",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower did not respond to call about overdue loan"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_63",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower declined to provide office location"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_64",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NOT_RECOGNIZED",
+      "notes": "\"Kya aap AI ho?\" - Borrower asked if AI assistant"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_65",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "distress"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_66",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "error": null
+  },
+  {
+    "id": "hin_67",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "capture_ptp",
+    "actual_args": {
+      "promised_amount": 50000,
+      "promised_date": "2023-03-13",
+      "confidence": "firm"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_68",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "notes": "Borrower is 30 days past due on Personal Loan, outstanding 50000.",
+      "code": "PTP"
+    },
+    "error": null
+  },
+  {
+    "id": "hin_69",
+    "language": "hinglish",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "other",
+      "borrower_statement": "Aapko lagbhag 30 din pehle personal loan 50000 ke baare mein koi samajh nahi aayi hai."
+    },
+    "error": null
+  },
+  {
+    "id": "mar_0",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 5000,
+      "promised_date": "2024-07-09",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "error": null
+  },
+  {
+    "id": "mar_1",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 2500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2500,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_2",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "\u0939\u0947 \u0915\u0930\u094d\u091c \u092e\u093e\u091d\u0902 \u0928\u093e\u0939\u0940, \u0924\u0941\u092e\u094d\u0939\u0940 \u091a\u0941\u0915\u0940\u091a\u094d\u092f\u093e \u0935\u094d\u092f\u0915\u094d\u0924\u0940\u0932\u093e \u092b\u094b\u0928 \u0915\u0947\u0932\u093e \u0906\u0939\u0947."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u0939\u0947 \u0915\u0930\u094d\u091c \u092e\u093e\u091d\u0902 \u0928\u093e\u0939\u0940, \u0924\u0941\u092e\u094d\u0939\u0940 \u091a\u0941\u0915\u0940\u091a\u094d\u092f\u093e \u0935\u094d\u092f\u0915\u094d\u0924\u0940\u0932\u093e \u092b\u094b\u0928 \u0915\u0947\u0932\u093e \u0906\u0939.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_3",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower requested not to be spoken to in a loud tone"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_4",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "PAID",
+      "notes": "\u092e\u0940 \u0906\u091c \u096b\u0966\u0966\u0966 \u0930\u0941\u092a\u092f\u0947 \u092d\u0930\u0932\u0947 \u0906\u0939\u0947\u0924."
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_5",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Rahul 30 \u0926\u093f\u0928\u093e\u0902\u0924\u0940\u0932 \u0935\u094d\u092f\u0915\u094d\u0924\u0940, 50000 \u0930\u0941\u092a\u092f\u0947 \u0915\u0940 \u0935\u094d\u092f\u0915\u094d\u0924\u093f\u0917\u0924 \u090b\u0923\u093e\u091a\u093e 30 \u0926\u093f\u0928\u093e\u0902\u0924\u0940\u0932 \u0935\u094d\u092f\u0915\u094d\u0924\u0940"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_6",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 2000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "2000",
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_7",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "\u092e\u0940 \u0939\u0947 \u0915\u0930\u094d\u091c \u092f\u093e\u0906\u0927\u0940\u091a \u092b\u0947\u0921\u0932\u0947 \u0906\u0939\u0947."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u092e\u0940 \u0939\u0947 \u0915\u0930\u094d\u091c \u092f\u093e\u0906\u0927\u0940\u091a \u092b\u0947\u0921\u0932\u0947 \u0906\u0939\u0947.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_8",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower declined to speak"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_9",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 7000,
+      "promised_date": "2024-08-01",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "sms",
+      "amount": 7000
+    },
+    "error": null
+  },
+  {
+    "id": "mar_10",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_11",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "\u092e\u0940 \u0938\u0927\u094d\u092f\u093e \u092a\u0948\u0938\u0947 \u0926\u0947\u090a \u0936\u0915\u0924 \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u092e\u0940 \u0938\u0927\u094d\u092f\u093e \u092a\u0948\u0938\u0947 \u0926\u0947\u090a \u0936\u0915\u0924 \u0928\u093e\u0939.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_12",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_13",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_14",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "\u0924\u0941\u092e\u091a\u0940 \u0930\u0915\u094d\u0915\u092e \u091a\u0941\u0915\u0940\u091a\u0940 \u0906\u0939\u0947, \u0907\u0924\u0915\u0947 \u092a\u0948\u0938\u0947 \u092e\u093e\u091d\u094d\u092f\u093e\u0935\u0930 \u092c\u093e\u0915\u0940 \u0928\u093e\u0939\u0940\u0924."
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_15",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 8000,
+      "promised_date": "2024-07-16",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "whatsapp",
+      "amount": 8000
+    },
+    "error": null
+  },
+  {
+    "id": "mar_16",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "out_of_scope"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "\"Rahul, 30 days past due on Personal Loan, outstanding 50000. \u2014 Malen boli kyonki yabda shetaritari bolaya. \u2014 log_disposition\""
+    },
+    "error": null
+  },
+  {
+    "id": "mar_17",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "PTP",
+      "notes": "\u092e\u0940 \u0909\u0926\u094d\u092f\u093e\u092a\u0930\u094d\u092f\u0902\u0924 \u0928\u0915\u094d\u0915\u0940\u091a \u092a\u0948\u0938\u0947 \u092d\u0930\u0947\u0928."
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_18",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Rahul, 30 days past due on Personal Loan, outstanding 50000."
+    },
+    "error": null
+  },
+  {
+    "id": "mar_19",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 3000,
+      "promised_date": "2024-07-11",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 3000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_20",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 3000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "3000",
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_21",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "\u092e\u093e\u091d\u0947 \u092c\u093f\u0932 \u091a\u0941\u0915\u0940\u091a\u0947 \u0906\u0939\u0947, \u092e\u0932\u093e \u0935\u093e\u091f\u0924 \u0928\u093e\u0939\u0940 \u0915\u0940 \u092e\u0932\u093e \u090f\u0935\u0922\u0947 \u092a\u0948\u0938\u0947 \u0926\u0947\u0923\u0947 \u0906\u0935\u0936\u094d\u092f\u0915 \u0906\u0939\u0947\u0924."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u092e\u093e\u091d\u0947 \u092c\u093f\u0932 \u091a\u0941\u0915\u0940\u091a\u0947 \u0906\u0939\u0947, \u092e\u0932\u093e \u0935\u093e\u091f\u0924 \u0928\u093e\u0939\u0940 \u0915\u0940 \u092e\u0932\u093e \u090f\u0935\u0922\u0947 \u092a\u0948\u0938\u0947 \u0926\u0947\u0923\u0947 \u0906\u0935\u0936\u094d\u092f\u0915 \u0906\u0939\u0947\u0924.",
+      "dispute_type": "amount_wrong"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_22",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "abuse"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower declined to converse in Hindi"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_23",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 10000,
+      "promised_date": "2024-07-17",
+      "confidence": "firm"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "\u092c\u094b\u0930\u094b\u0935\u0930 \u0967\u096d \u091c\u0941\u0932\u0948 \u0930\u094b\u091c\u0940 \u0967\u0966,\u0966\u0966\u0966 \u0930\u0941\u092a\u092f\u0947 \u0926\u0947\u0908\u0928"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_24",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "\u092e\u0940 \u092a\u0948\u0938\u0947 \u092d\u0930\u0942 \u0936\u0915\u0923\u093e\u0930 \u0928\u093e\u0939\u0940, \u092e\u093e\u091d\u094d\u092f\u093e\u0915\u0921\u0947 \u0906\u0924\u093e \u092a\u0948\u0938\u0947 \u0928\u093e\u0939\u0940\u0924."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u092e\u0940 \u092a\u0948\u0938\u0947 \u092d\u0930\u0942 \u0936\u0915\u0923\u093e\u0930 \u0928\u093e\u0939\u0940, \u092e\u093e\u091d\u094d\u092f\u093e\u0915\u0921\u0947 \u0906\u0924\u093e \u092a\u0948\u0938\u0947 \u0928\u093e\u0939\u0940\u0924.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_25",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower declined to talk"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_26",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "50000",
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_27",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "\u092e\u0940 \u0915\u0930\u094d\u091c \u0918\u0947\u0923\u094d\u092f\u093e\u092c\u093e\u092c\u0924 \u0915\u0927\u0940\u0939\u0940 \u0938\u0939\u092e\u0924 \u0928\u0935\u094d\u0939\u0924\u094b."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "other",
+      "borrower_statement": "\u092e\u0940 \u0915\u0930\u094d\u091c \u0918\u0947\u0923\u094d\u092f\u093e\u092c\u093e\u092c\u0924 \u0915\u0927\u0940\u0939\u0940 \u0938\u0939\u092e\u0924 \u0928\u0935\u094d\u0939\u0924\u094b."
+    },
+    "error": null
+  },
+  {
+    "id": "mar_28",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 2500,
+      "promised_date": "2024-07-31",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_29",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "borrower_request"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_30",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "\u092e\u0940 \u0924\u0941\u092e\u094d\u0939\u093e\u0932\u093e \u092a\u0930\u0924 \u0915\u0949\u0932 \u0915\u0930\u0942 \u0915\u093e? \u092e\u0932\u093e \u0906\u0924\u093e \u092f\u093e\u092c\u0926\u094d\u0926\u0932 \u092c\u094b\u0932\u0923\u0947 \u0936\u0915\u094d\u092f \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower declined to discuss debt"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_31",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "NONE",
+    "actual_args": {},
+    "error": null
+  },
+  {
+    "id": "mar_32",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 4000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "4000",
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_33",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "other",
+      "borrower_statement": "\u0939\u0947 \u0915\u0930\u094d\u091c \u092e\u093e\u091d\u094d\u092f\u093e \u0928\u093e\u0935\u093e\u0935\u0930 \u0915\u0938\u0947 \u0906\u0932\u0947? \u092e\u0932\u093e \u0915\u093e\u0939\u0940\u0939\u0940 \u0906\u0920\u0935\u0924 \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "\u0915\u0930\u094d\u091c \u092e\u093e\u0930\u094d\u0915\u093f\u0902\u0917 \u0938\u093e\u0920\u0940 \u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0947\u0932\u093e \u0917\u0947\u0932\u093e"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_34",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 6000,
+      "promised_date": "2024-07-12",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_35",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "\u092e\u093e\u091d\u094d\u092f\u093e\u0915\u0921\u0947 \u0906\u0924\u093e \u092c\u094b\u0932\u0923\u094d\u092f\u093e\u0938\u093e\u0920\u0940 \u0935\u0947\u0933 \u0928\u093e\u0939\u0940, \u0928\u0902\u0924\u0930 \u092b\u094b\u0928 \u0915\u0930\u093e."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Rahul, 30 days past due on Personal Loan, outstanding 50000"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_36",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "\u0924\u0941\u092e\u094d\u0939\u0940 \u092e\u0932\u093e \u0939\u0947 \u092a\u0948\u0938\u0947 \u0926\u0947\u0923\u094d\u092f\u093e\u0938 \u092d\u093e\u0917 \u092a\u093e\u0921\u0942 \u0936\u0915\u0924 \u0928\u093e\u0939\u0940, \u092e\u0940 \u0924\u0941\u092e\u094d\u0939\u093e\u0932\u093e \u0915\u0927\u0940\u0939\u0940 \u092a\u0948\u0938\u0947 \u0926\u0947\u0923\u093e\u0930 \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u0924\u0941\u092e\u094d\u0939\u0940 \u092e\u0932\u093e \u0939\u0947 \u092a\u0948\u0938\u0947 \u0926\u0947\u0923\u094d\u092f\u093e\u0938 \u092d\u093e\u0917 \u092a\u093e\u0921\u0942 \u0936\u0915\u0924 \u0928\u093e\u0939\u0940, \u092e\u0940 \u0924\u0941\u092e\u094d\u0939\u093e\u0932\u093e \u0915\u0927\u0940\u0939\u0940 \u092a\u0948\u0938\u0947 \u0926\u0947\u0923\u093e\u0930 \u0928\u093e\u0939.",
+      "dispute_type": "other"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_37",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "NONE",
+    "actual_args": {},
+    "error": null
+  },
+  {
+    "id": "mar_38",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 1000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "1000",
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_39",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 2200,
+      "promised_date": "2024-08-01",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2200,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_40",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "PAID",
+      "notes": "\u092e\u0940 \u0906\u091c\u091a \u092c\u0901\u0915\u0947\u0924 \u092a\u0948\u0938\u0947 \u092d\u0930\u0932\u0947 \u0906\u0939\u0947\u0924."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "\"Rahul, 30 days past due on Personal Loan, outstanding 50000\""
+    },
+    "error": null
+  },
+  {
+    "id": "mar_41",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "ESCALATED",
+      "notes": "Borrower requested to escalate to human agent"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_42",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "\u0939\u0947 \u0915\u094b\u0923\u0924\u094d\u092f\u093e \u0915\u0930\u094d\u091c\u093e\u092c\u0926\u094d\u0926\u0932 \u092c\u094b\u0932\u0924 \u0906\u0939\u093e\u0924? \u092e\u0932\u093e \u0915\u093e\u0939\u0940\u0939\u0940 \u092e\u093e\u0939\u093f\u0924\u0940 \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_43",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "notes": "\"Rahul, 30 days past due on Personal Loan, outstanding 50000\"",
+      "code": "NO_CONTACT"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_44",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 4500,
+      "promised_date": "2024-07-15",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 4500,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_45",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "CALLBACK",
+      "notes": "\u092e\u0940 \u0938\u0927\u094d\u092f\u093e \u092b\u094b\u0928\u0935\u0930 \u0928\u093e\u0939\u0940, \u0928\u0902\u0924\u0930 \u092b\u094b\u0928 \u0915\u0930\u093e."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower not available on phone"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_46",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 5000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": "5000",
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_47",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "already_paid",
+      "borrower_statement": "\u092e\u0940 \u0939\u0947 \u0915\u0930\u094d\u091c \u092a\u0942\u0930\u094d\u0935\u0940\u091a \u092b\u0947\u0921\u0932\u0947 \u0906\u0939\u0947, \u092e\u093e\u091d\u094d\u092f\u093e\u0915\u0921\u0947 \u092a\u093e\u0935\u0924\u094d\u092f\u093e \u0906\u0939\u0947\u0924."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower acknowledges debt, 30 days past due on Personal Loan, outstanding 50000."
+    },
+    "error": null
+  },
+  {
+    "id": "mar_48",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "abuse"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower threatened legal action"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_49",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 3500,
+      "promised_date": "2024-07-15",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 3500,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_50",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "REFUSED",
+      "notes": "\u092e\u0940 \u0924\u0941\u092e\u091a\u093e \u0915\u0949\u0932 \u0915\u093e \u0918\u0947\u0924\u0932\u093e? \u0915\u0943\u092a\u092f\u093e \u092a\u0941\u0928\u094d\u0939\u093e \u092b\u094b\u0928 \u0915\u0930\u0942 \u0928\u0915\u093e."
+    },
+    "actual_tool": "NONE",
+    "actual_args": {},
+    "error": null
+  },
+  {
+    "id": "mar_51",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "error": null
+  },
+  {
+    "id": "mar_52",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 2000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 2000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_53",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 2700,
+      "promised_date": "2024-07-10",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 50000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_54",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "\u0924\u0941\u092e\u094d\u0939\u0940 \u091a\u0941\u0915\u0940\u091a\u094d\u092f\u093e \u0928\u0902\u092c\u0930\u0935\u0930 \u092b\u094b\u0928 \u0915\u0947\u0932\u093e \u0906\u0939\u0947."
+    },
+    "actual_tool": "NONE",
+    "actual_args": {},
+    "error": null
+  },
+  {
+    "id": "mar_55",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "borrower_request"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "\u0915\u0930\u094d\u091c\u093e\u092c\u0926\u094d\u0926\u0932 \u0905\u0927\u093f\u0915 \u092e\u093e\u0939\u093f\u0924\u0940 \u0926\u093f\u0932\u0923\u094d\u092f\u093e\u0938\u093e\u0920\u0940 \u092a\u0941\u0928\u094d\u0939\u093e \u0938\u0902\u0935\u093e\u0926 \u0938\u094d\u0925\u093e\u092a\u093f\u0924 \u0915\u0930\u0923\u094d\u092f\u093e\u0938\u093e\u0920\u0940 \u092a\u094d\u0930\u092f\u0924\u094d\u0928 \u0915\u0930\u0923\u094d\u092f\u093e\u0924 \u0906\u0932\u0947"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_56",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "amount_wrong",
+      "borrower_statement": "\u0924\u0941\u092e\u094d\u0939\u0940 \u092e\u093e\u091d\u094d\u092f\u093e \u092c\u0901\u0915 \u0916\u093e\u0924\u094d\u092f\u093e\u0924\u0942\u0928 \u091c\u093e\u0938\u094d\u0924 \u092a\u0948\u0938\u0947 \u0915\u093e\u0922\u0932\u0947 \u0906\u0939\u0947\u0924, \u0939\u0940 \u0930\u0915\u094d\u0915\u092e \u091a\u0941\u0915\u0940\u091a\u0940 \u0906\u0939\u0947."
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "channel": "sms",
+      "amount": 50000
+    },
+    "error": null
+  },
+  {
+    "id": "mar_57",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "\"Rahul, 30 days past due on Personal Loan, outstanding 50000\""
+    },
+    "error": null
+  },
+  {
+    "id": "mar_58",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "whatsapp",
+      "amount": 7000
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 7000,
+      "channel": "whatsapp"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_59",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 3000,
+      "promised_date": "2024-08-10",
+      "confidence": "firm"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 3000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_60",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "PAID",
+      "notes": "\u092e\u0940 \u0906\u091c \u0938\u0915\u093e\u0933\u0940\u091a \u092a\u0948\u0938\u0947 \u092d\u0930\u0932\u0947 \u0906\u0939\u0947\u0924, \u0915\u0943\u092a\u092f\u093e \u0924\u092a\u093e\u0938\u093e."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "PTP",
+      "notes": "Borrower confirmed payment, call ended"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_61",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "distress"
+    },
+    "actual_tool": "escalate_human",
+    "actual_args": {
+      "reason": "distress"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_62",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "not_mine",
+      "borrower_statement": "\u092e\u0940 \u092f\u093e \u0915\u0930\u094d\u091c\u093e\u0938\u093e\u0920\u0940 \u0915\u0927\u0940\u091a \u0905\u0930\u094d\u091c \u0915\u0947\u0932\u093e \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "borrower_statement": "\u092e\u0940 \u092f\u093e \u0915\u0930\u094d\u091c\u093e\u0938\u093e\u0920\u0940 \u0915\u0927\u0940\u091a \u0905\u0930\u094d\u091c \u0915\u0947\u0932\u093e \u0928\u093e\u0939\u0940.",
+      "dispute_type": "not_mine"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_63",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "WRONG_NUMBER",
+      "notes": "Borrower declined to speak Hindi"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_64",
+    "language": "marathi",
+    "expected_tool": "send_payment_link",
+    "expected_args": {
+      "channel": "sms",
+      "amount": 1500
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 1500,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_65",
+    "language": "marathi",
+    "expected_tool": "capture_ptp",
+    "expected_args": {
+      "promised_amount": 5000,
+      "promised_date": "2024-07-15",
+      "confidence": "tentative"
+    },
+    "actual_tool": "send_payment_link",
+    "actual_args": {
+      "amount": 5000,
+      "channel": "sms"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_66",
+    "language": "marathi",
+    "expected_tool": "log_disposition",
+    "expected_args": {
+      "code": "NO_CONTACT",
+      "notes": "\u092e\u0940 \u0924\u0941\u092e\u094d\u0939\u093e\u0932\u093e \u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0930\u0942 \u0936\u0915\u0924 \u0928\u093e\u0939\u0940, \u0924\u0941\u092e\u091a\u093e \u0928\u0902\u092c\u0930 \u0932\u093e\u0917\u0924 \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "NO_CONTACT",
+      "notes": "Borrower declined contact"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_67",
+    "language": "marathi",
+    "expected_tool": "escalate_human",
+    "expected_args": {
+      "reason": "dispute"
+    },
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower declined to discuss debt"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_68",
+    "language": "marathi",
+    "expected_tool": "mark_dispute",
+    "expected_args": {
+      "dispute_type": "other",
+      "borrower_statement": "\u092e\u0940 \u0924\u0941\u092e\u091a\u094d\u092f\u093e\u0935\u0930 \u0906\u0930\u094b\u092a \u0915\u0930\u0924\u094b \u0915\u0940 \u0924\u0941\u092e\u094d\u0939\u0940 \u092b\u0938\u0935\u0923\u0942\u0915 \u0915\u0930\u0924 \u0906\u0939\u093e\u0924. \u092e\u0940 \u0939\u0947 \u092a\u0948\u0938\u0947 \u092d\u0930\u0923\u093e\u0930 \u0928\u093e\u0939\u0940."
+    },
+    "actual_tool": "mark_dispute",
+    "actual_args": {
+      "dispute_type": "other",
+      "borrower_statement": "\u092e\u0940 \u0939\u0947 \u092a\u0948\u0938\u0947 \u092d\u0930\u0923\u093e\u0930 \u0928\u093e\u0939\u0940"
+    },
+    "error": null
+  },
+  {
+    "id": "mar_69",
+    "language": "marathi",
+    "expected_tool": "NONE",
+    "expected_args": {},
+    "actual_tool": "log_disposition",
+    "actual_args": {
+      "code": "REFUSED",
+      "notes": "Borrower responded in Marathi, unable to proceed with call"
+    },
+    "error": null
+  }
+]
