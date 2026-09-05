@@ -175,7 +175,5 @@ st.bar_chart(df_chart.set_index("Language")[["Accuracy (%)", "Missed (%)", "Spur
 st.markdown("---")
 st.markdown("### 🔍 Raw Evaluation Dataset (Sample)")
 df_results = pd.DataFrame(results)
-display_cols = ['id', 'language', 'utterance', 'expected_tool', 'actual_tool']
-if 'latency_ms' in df_results.columns:
-    display_cols.append('latency_ms')
+display_cols = [col for col in ['id', 'language', 'utterance', 'expected_tool', 'actual_tool', 'latency_ms'] if col in df_results.columns]
 st.dataframe(df_results[display_cols], use_container_width=True)
