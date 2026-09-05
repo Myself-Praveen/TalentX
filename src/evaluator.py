@@ -247,7 +247,8 @@ async def main():
         # Setup Ollama
         openai_client = AsyncOpenAI(
             base_url="http://localhost:11434/v1",
-            api_key="ollama"
+            api_key="ollama",
+            timeout=45.0
         )
         for i, case in enumerate(cases):
             print(f"Evaluating {i+1}/{len(cases)} [{case['language']}]...")
